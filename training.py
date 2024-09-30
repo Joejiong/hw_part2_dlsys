@@ -6,14 +6,14 @@ import argparse
 
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 import torch.optim as optim
+import torch.nn.functional as F
 
-from torchvision import datasets, transforms
 from torch.autograd import Variable
+from torchvision import datasets, transforms
 
 from utils import *
-from mylenet import *
+from custom_lenet.lenet_custom import *
 
 
 def save_state(model, acc):
