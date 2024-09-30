@@ -17,10 +17,6 @@ class LeNet_300_100(nn.Module):
     def __init__(self, prune):
         super(LeNet_300_100, self).__init__()
 
-        # self._w1_T = nn.Parameter(torch.randn(784, 300))
-        # self._w2_T = nn.Parameter(torch.randn(300, 100))
-        # self._bias1 = nn.Parameter(torch.randn(300))
-        # self._bias2 = nn.Parameter(torch.randn(100))
         self._w1_T = nn.Parameter(torch.empty(784, 300))
         self._bias1 = nn.Parameter(torch.empty(300))
 
@@ -36,10 +32,9 @@ class LeNet_300_100(nn.Module):
         # self.ip2 = nn.Linear(300, 100) # 300*100
         # self.ip1 = sgemm(x, self._w_T) + self._bias 300*100
 
-        self.relu_ip2 = nn.ReLU(inplace=True)
-       
+        self.relu_ip2 = nn.ReLU(inplace=True) 
         self.ip3 = nn.Linear(100, 10)
-
+        
         self.device = torch.device('cuda')
         return
     

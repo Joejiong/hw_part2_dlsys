@@ -14,6 +14,7 @@ from torchvision import datasets, transforms
 
 from utils import *
 from custom_lenet.lenet_custom import *
+from lenet300100 import *
 
 
 def save_state(model, acc):
